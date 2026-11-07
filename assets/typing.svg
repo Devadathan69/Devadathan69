@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="66" viewBox="0 0 740 66" role="img" aria-labelledby="title">
+  <title id="title">Full-stack developer · Applied AI prototyping · Interactive 3D on the web</title>
+  <style>
+    .frame { opacity: 0; }
+    .one { opacity: 1; }
+    @media (prefers-reduced-motion: no-preference) {
+      .frame { opacity: 0; animation: display 15s step-end infinite; }
+      .phrase {
+        clip-path: inset(0 100% 0 0);
+        animation: type 15s steps(18, end) infinite;
+      }
+      .two, .two .phrase { animation-delay: 5s; }
+      .three, .three .phrase { animation-delay: 10s; }
+      @keyframes display {
+        0% { opacity: 1; }
+        33.3333%, 100% { opacity: 0; }
+      }
+      @keyframes type {
+        0% { clip-path: inset(0 82% 0 0); }
+        10%, 28% { clip-path: inset(0 0 0 0); }
+        33.3333%, 100% { clip-path: inset(0 100% 0 0); }
+      }
+    }
+  </style>
+  <rect x="61" y="5" width="618" height="56" rx="10" fill="#13162e" stroke="#514777"/>
+  <path d="m84 26 8 7-8 7m14 1h10" stroke="#76f1d7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M124 16v34" stroke="#4a4670"/>
+  <g font-family="Consolas, 'Liberation Mono', monospace" font-size="31" font-weight="700">
+    <g class="frame one" fill="#97f7ea"><text class="phrase" x="146" y="43">Full-stack developer ▌</text></g>
+    <g class="frame two" fill="#d0baff"><text class="phrase" x="146" y="43">Applied AI prototyping ▌</text></g>
+    <g class="frame three" fill="#ffcfbc"><text class="phrase" x="146" y="43">Interactive 3D on the web ▌</text></g>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="131" height="32" viewBox="0 0 131 32" role="img" aria-labelledby="label">
+  <title id="label">Playwright</title>
+  <rect x=".5" y=".5" width="130" height="31" rx="4" fill="#6948ae" stroke="#ffffff" stroke-opacity=".19"/>
+  <path d="m3 5 18 4-2 7c-.6 2.4-3 4-5.3 3.3l-5.8-1.7A4 4 0 0 1 5 14.8L3 5Zm4.8 4.4-.4 1.6 3.2.8.4-1.6-3.2-.8Zm6.8 1.6-.4 1.6 3.2.8.4-1.6-3.2-.8Zm-5.3 2.7c.3 1.4 1.3 2.4 2.7 2.8 1.2.4 2.5 0 3.4-.9l-6.1-1.9Z" transform="translate(10 8) scale(.67)" fill="#ffffff" fill-rule="evenodd"/>
+  <text x="34" y="20.5" fill="#ffffff" font-family="Arial, 'Liberation Sans', sans-serif" font-weight="700" font-size="12" letter-spacing="1.15">PLAYWRIGHT</text>
+</svg>
