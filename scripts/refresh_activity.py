@@ -11,7 +11,6 @@ from urllib.request import Request, urlopen
 
 USERNAME = "Devadathan69"
 ASSETS = Path(__file__).resolve().parent.parent / "assets"
-COLORS = ("#222644", "#3c407a", "#605bc1", "#8a76ee", "#bd9aff")
 MONO = "Consolas, 'Liberation Mono', monospace"
 
 
@@ -46,7 +45,7 @@ class Calendar(HTMLParser):
             raise ValueError("Expected about one year of contributions")
         if any(day != days[0][0] + timedelta(days=index) for index, (day, _, _) in enumerate(days)):
             raise ValueError("GitHub returned a non-contiguous calendar")
-        if any(not 0 <= level < len(COLORS) or bool(level) != bool(count) for _, level, count in days):
+        if any(not 0 <= level <= 4 or bool(level) != bool(count) for _, level, count in days):
             raise ValueError("GitHub returned inconsistent contribution counts")
         return days
 
@@ -60,75 +59,86 @@ def svg(height, title, content):
 """
 
 
-def contribution_grid(days):
+def build_rhythm(days):
     first, last = days[0][0], days[-1][0]
     origin = first - timedelta(days=(first.weekday() + 1) % 7)
-    columns = (last - origin).days // 7 + 1
-    left, top, dx, dy = 36, 56, 17, 15
-    right = left + (columns - 1) * dx
-    row_length = right - left
-    path_length = 7 * row_length + 6 * dy
-    travel = .94
-    duration = "36s"
+    weekly = [0] * ((last - origin).days // 7 + 1)
+    for day, _, count in days:
+        weekly[(day - origin).days // 7] += count
 
-    route = [f"M{left} {top}"]
-    for row in range(7):
-        route.append(f"H{right if row % 2 == 0 else left}")
-        if row < 6:
-            route.append(f"V{top + (row + 1) * dy}")
-    path = " ".join(route)
-    cells = []
-    eaten = []
-    for day, level, _ in days:
-        column, row = divmod((day - origin).days, 7)
-        x, y = left + column * dx - 6, top + row * dy - 6
-        cell = f'x="{x}" y="{y}" width="12" height="12" rx="2"'
-        cells.append(f'    <rect {cell} fill="{COLORS[level]}"/>')
-        if level:
-            progress = (row * (row_length + dy) + (column * dx if row % 2 == 0 else row_length - column * dx)) / path_length
-            phase = max(.0001, progress * travel)
-            eaten.append(f"""    <rect {cell} fill="{COLORS[0]}" opacity="0">
-      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;{phase:.5f};.985;1" calcMode="discrete" dur="{duration}" repeatCount="indefinite"/>
-    </rect>""")
-
-    snake = []
-    for index in reversed(range(6)):
-        color = ("#78f9de", "#59e6ce", "#49ccb9", "#3cb6a8", "#329a98", "#2e7f88")[index]
-        face = '<path d="M1 -2.4h1.6m-1.6 4.8h1.6" stroke="#133448" stroke-width="1.6" stroke-linecap="round"/>' if index == 0 else ""
-        delay = f"{index * .086:.3f}s"
-        snake.append(f"""    <g visibility="hidden">
-      <rect x="-6.5" y="-6.5" width="13" height="13" rx="3" fill="{color}"/>{face}
-      <set attributeName="visibility" to="visible" begin="{delay}" dur="indefinite"/>
-      <animateMotion path="{path}" rotate="auto" begin="{delay}" keyPoints="0;1;1" keyTimes="0;{travel};1" calcMode="linear" dur="{duration}" repeatCount="indefinite"/>
-    </g>""")
-
-    cell_markup = "\n".join(cells)
-    motion_markup = "\n".join(eaten + snake)
-    legend = "\n".join(
-        f'  <rect x="{728 + 17 * index}" y="168" width="12" height="12" rx="2" fill="{color}"/>'
-        for index, color in enumerate(COLORS)
-    )
-    return svg(198, f"Contribution replay for {USERNAME}, {first:%b %Y} to {last:%b %Y}", f"""  <style>
+    peak_index = max(range(len(weekly)), key=weekly.__getitem__)
+    peak = weekly[peak_index]
+    bars = []
+    rests = []
+    for index, count in enumerate(weekly):
+        x = 38 + index * 884 / (len(weekly) - 1)
+        if count:
+            amplitude = max(2, 48 * count / peak)
+            bars.append(f"M{x:.1f} {112 - amplitude:.1f}V{112 + amplitude:.1f}")
+        else:
+            rests.append(f"M{x:.1f} 111v2")
+    wave = " ".join(bars)
+    silence = " ".join(rests)
+    marker = ""
+    if peak:
+        x = 38 + peak_index * 884 / (len(weekly) - 1)
+        marker = f"""  <path d="M{x:.1f} 64v96" stroke="#ffc5ab" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="{x:.1f}" cy="54" r="2.4" fill="#ffc5ab"/>"""
+    title = f"Build Rhythm, weekly GitHub contributions for {USERNAME}. Peak week: {peak} contributions."
+    return svg(211, title, f"""  <defs>
+    <linearGradient id="rhythm" gradientUnits="userSpaceOnUse" x1="30" x2="930" y1="112" y2="112">
+      <stop stop-color="#70efda"/>
+      <stop offset=".45" stop-color="#809dfc"/>
+      <stop offset="1" stop-color="#c998ff"/>
+    </linearGradient>
+    <linearGradient id="playback">
+      <stop stop-color="#92c3fb" stop-opacity="0"/>
+      <stop offset="1" stop-color="#a1f9eb" stop-opacity=".26"/>
+    </linearGradient>
+    <radialGradient id="plot-glow" cx=".64" cy=".56" r=".62">
+      <stop stop-color="#574caa" stop-opacity=".29"/>
+      <stop offset="1" stop-color="#574caa" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="plot"><rect x="26" y="50" width="908" height="122" rx="8"/></clipPath>
+    <clipPath id="played"><rect class="playhead" x="-80" y="50" width="80" height="122"/></clipPath>
+    <path id="bars" d="{wave}"/>
+  </defs>
+  <style>
     .motion {{ display: none; }}
-    @media (prefers-reduced-motion: no-preference) {{ .motion {{ display: inline; }} }}
+    @media (prefers-reduced-motion: no-preference) {{
+      .motion {{ display: inline; }}
+      .playhead {{ animation: scan 10s linear infinite; }}
+      @keyframes scan {{ from {{ transform: translateX(26px); }} to {{ transform: translateX(1014px); }} }}
+    }}
   </style>
-  <g font-family="{MONO}" font-size="15" font-weight="700" letter-spacing="1.4">
-    <text x="30" y="33" fill="#9afbe8">CONTRIBUTION REPLAY</text>
-    <text x="930" y="33" text-anchor="end" fill="#c8c4ef">{first:%b %Y} → {last:%b %Y}</text>
+  <g font-family="{MONO}">
+    <path d="M30 27v8m6-12v16m6-20v24m6-19v14m6-10v6" stroke="#8af5de" stroke-width="2.2" stroke-linecap="round"/>
+    <text x="70" y="37" fill="#9afbe8" font-size="22" font-weight="700" letter-spacing="2">BUILD RHYTHM</text>
+    <text x="930" y="35" text-anchor="end" fill="#c8c4ef" font-size="16" letter-spacing="1">WEEKLY GITHUB ACTIVITY</text>
   </g>
-  <g>
-{cell_markup}
+  <rect x="26" y="50" width="908" height="122" rx="8" fill="#101327" stroke="#2c304e"/>
+  <rect x="26" y="50" width="908" height="122" rx="8" fill="url(#plot-glow)"/>
+  <path d="M26 80h908M26 144h908" stroke="#363754" stroke-dasharray="2 5"/>
+  <path d="M26 112h908" stroke="#414563"/>
+  <path d="{silence}" fill="none" stroke="#626584" stroke-width="3" stroke-linecap="round"/>
+  <g fill="none" stroke-linecap="round">
+    <use href="#bars" stroke="url(#rhythm)" stroke-width="13" opacity=".13"/>
+    <use href="#bars" stroke="url(#rhythm)" stroke-width="6"/>
+{marker}
+    <g class="motion" clip-path="url(#plot)">
+      <g class="playhead">
+        <rect x="-80" y="50" width="80" height="122" fill="url(#playback)"/>
+        <path d="M0 50v122" stroke="#b9fff0" stroke-width="1.3"/>
+        <circle cy="112" r="3" fill="#b9fff0"/>
+      </g>
+      <use href="#bars" clip-path="url(#played)" stroke="#d1fff5" stroke-width="6" opacity=".76"/>
+    </g>
   </g>
-  <g class="motion">
-{motion_markup}
-  </g>
-  <path d="M30 159h900" stroke="#343252"/>
-  <g font-family="{MONO}" font-size="13" fill="#c8c4ef">
-    <text x="30" y="179">PUBLIC GITHUB CALENDAR</text>
-    <text x="714" y="179" text-anchor="end">LESS</text>
-    <text x="827" y="179">MORE</text>
-  </g>
-{legend}""")
+  <g font-family="{MONO}" font-size="16" fill="#c8c4ef">
+    <text x="30" y="195">{first:%b %Y}</text>
+    <text x="480" y="195" text-anchor="middle" fill="#ffc5ab">PEAK WEEK · {peak:,} CONTRIBUTIONS</text>
+    <text x="930" y="195" text-anchor="end">{last:%b %Y}</text>
+  </g>""")
 
 
 def statistics(days):
@@ -167,7 +177,7 @@ def main():
         calendar = Calendar()
         calendar.feed(response.read().decode("utf-8"))
     days = calendar.days()
-    graphics = {"contribution-grid.svg": contribution_grid(days), "stats.svg": statistics(days)}
+    graphics = {"build-rhythm.svg": build_rhythm(days), "stats.svg": statistics(days)}
     for name, content in graphics.items():
         (ASSETS / name).write_text(content, encoding="utf-8", newline="\n")
     print(f"Rendered {len(days)} days through {days[-1][0]} for {USERNAME}")

@@ -5,7 +5,7 @@
   <img src="assets/typing.svg" width="740" alt="Full-stack developer · Applied AI prototyping · Interactive 3D on the web">
 </p>
 <p align="center">
-  <img src="assets/contribution-grid.svg" width="100%" alt="Animated snake on Devadathan69’s GitHub contribution calendar">
+  <img src="assets/build-rhythm.svg" width="100%" alt="Build Rhythm, an animated waveform of Devadathan69’s weekly GitHub contributions">
 </p>
 <p align="center">
   <a href="https://github.com/Devadathan69"><img src="assets/badges/github.svg" height="32" alt="Follow Devadathan on GitHub"></a>
