@@ -12,6 +12,9 @@ from urllib.request import Request, urlopen
 USERNAME = "Devadathan69"
 ASSETS = Path(__file__).resolve().parent.parent / "assets"
 MONO = "Consolas, 'Liberation Mono', monospace"
+# Year totals supplied from the account owner's GitHub profile.
+LIFETIME_SNAPSHOT = {2024: 5, 2025: 228, 2026: 483}
+SNAPSHOT_DATE = date(2026, 11, 7)
 
 
 class Calendar(HTMLParser):
@@ -146,25 +149,34 @@ def statistics(days):
     recent = active if active[-1] else active[:-1]
     current = sum(1 for _ in takewhile(bool, reversed(recent)))
     longest = max((sum(1 for _ in group) for flag, group in groupby(active) if flag), default=0)
-    total = sum(count for _, _, count in days)
+    lifetime_total = sum(LIFETIME_SNAPSHOT.values())
+    years = "   /   ".join(f"{year}: {count:,}" for year, count in LIFETIME_SNAPSHOT.items())
     last = days[-1][0]
     cards = []
     for index, (value, label, color) in enumerate((
-        (f"{total:,}", "Contributions", "#c6a7ff"),
-        (f"{current}d", "Current streak", "#83f5df"),
-        (f"{longest}d", "Longest streak", "#ffbdaa"),
+        (f"{lifetime_total:,}", "Lifetime contributions", "#c6a7ff"),
+        (f"{current}d", "Public current streak", "#83f5df"),
+        (f"{longest}d", "Public longest streak", "#ffbdaa"),
     )):
         x = 27 + 306 * index
         cards.append(f"""  <rect x="{x}" y="57" width="294" height="124" rx="10" fill="#1d2040" stroke="#454268"/>
   <text x="{x + 147}" y="119" text-anchor="middle" fill="{color}" font-size="48" font-weight="700">{value}</text>
   <text x="{x + 147}" y="151" text-anchor="middle" fill="#e1dff6" font-size="23">{label}</text>""")
     card_markup = "\n".join(cards)
-    return svg(207, f"{total} contributions, {current}-day current streak and {longest}-day longest streak in the displayed GitHub calendar", f"""  <g font-family="{MONO}" font-size="15" fill="#c8c4ef">
+    title = (
+        f"{lifetime_total:,} lifetime contributions as of {SNAPSHOT_DATE:%d %b %Y}. "
+        f"Public streaks in days: {current} current, {longest} longest."
+    )
+    return svg(231, title, f"""  <g font-family="{MONO}" font-size="15" fill="#c8c4ef">
     <text x="29" y="34" letter-spacing="1.5" fill="#9afbe8">GITHUB ACTIVITY</text>
-    <text x="931" y="34" text-anchor="end">THROUGH {last:%d %b %Y}</text>
+    <text x="931" y="34" text-anchor="end">PUBLIC STREAKS THROUGH {last:%d %b %Y}</text>
   </g>
   <g font-family="Arial, 'Liberation Sans', sans-serif">
 {card_markup}
+  </g>
+  <g font-family="{MONO}" font-size="15" fill="#c8c4ef">
+    <text x="29" y="210">LIFETIME SNAPSHOT · {SNAPSHOT_DATE:%d %b %Y}</text>
+    <text x="931" y="210" text-anchor="end">{years}</text>
   </g>""")
 
 

@@ -41,26 +41,38 @@ const devadathan = {
 
 ## 🎮 Featured Projects
 
-### GhostWire · Motion-controlled co-op
+<table width="100%">
+  <tr><td>
+    <a href="https://github.com/Devadathan69/GhostWire#demo-video">
+      <img src="assets/projects/ghostwire.jpg" width="960" alt="GhostWire · Heroes battle the Ember Colossus in a 3D arena.">
+    </a>
+    <p>Control a hero with your movements and coordinate attacks with friends to break the boss’s shield.</p>
+    <p><strong><a href="https://github.com/Devadathan69/GhostWire#demo-video">Watch gameplay ↗</a></strong> · <a href="https://github.com/Devadathan69/GhostWire">Source code</a></p>
+  </td></tr>
+</table>
 
-A 3D boss raid you play in the browser. Move your body to control a hero, then coordinate attacks with friends to break the boss’s shield.
+<table width="100%">
+  <tr><td>
+    <a href="https://loopledger-demo.vercel.app/">
+      <img src="assets/projects/loopledger.jpg" width="960" alt="LoopLedger · Finance and billing dashboard populated with demo data.">
+    </a>
+    <p>Follow a quote through recurring invoices and payments, with a breakdown of how each charge was calculated.</p>
+    <p><strong><a href="https://loopledger-demo.vercel.app/">Open the live demo ↗</a></strong> · <a href="https://github.com/Devadathan69/make-a-ton">Source code</a><br><sub>Demo sign-in required</sub></p>
+  </td></tr>
+</table>
 
-**[Watch gameplay ↗](https://github.com/Devadathan69/GhostWire#demo-video)** · [Source](https://github.com/Devadathan69/GhostWire)
-
-### LoopLedger · Subscription billing
-
-A subscription workspace that follows a quote through recurring invoices and payments. Open an invoice to see how its total was calculated.
-
-**[Try the live demo ↗](https://loopledger-demo.vercel.app/)** · [Source](https://github.com/Devadathan69/make-a-ton)
-
-### MaatriWatch · Maternal-care prototype
-
-A team prototype that brings wearable readings and symptom notes into a clinician’s follow-up workflow.
-
-**[Watch the walkthrough ↗](https://github.com/Devadathan69/MaatriWatch#product-demo)** · [Source](https://github.com/Devadathan69/MaatriWatch)
+<table width="100%">
+  <tr><td>
+    <a href="https://github.com/Devadathan69/MaatriWatch#product-demo">
+      <img src="assets/projects/maatriwatch.jpg" width="960" alt="MaatriWatch · Patient app screens for symptom history and SOS support.">
+    </a>
+    <p>A team prototype that brings wearable readings and symptom notes into a clinician’s follow-up workflow.</p>
+    <p><strong><a href="https://github.com/Devadathan69/MaatriWatch#product-demo">Watch the walkthrough ↗</a></strong> · <a href="https://github.com/Devadathan69/MaatriWatch">Source code</a></p>
+  </td></tr>
+</table>
 
 ## 📊 GitHub Statistics
 
 <p align="center">
-  <img src="assets/stats.svg" width="100%" alt="Contributions, current streak, and longest streak in Devadathan69’s public GitHub calendar">
+  <img src="assets/stats.svg" width="100%" alt="Devadathan69’s lifetime contribution snapshot and daily-updated streaks from the public GitHub calendar">
 </p>
