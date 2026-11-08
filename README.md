@@ -15,8 +15,8 @@ Public streaks · **2d** current · **9d** longest
 <!-- public-activity:end -->
 
 <picture>
-  <source media="(max-width: 600px)" srcset="assets/night-line-mobile.svg">
-  <img src="assets/night-line.svg" width="100%" alt="Night Line. Daily GitHub contribution blocks light up like windows above a night train. Brighter windows represent more contributions.">
+  <source media="(max-width: 600px)" srcset="assets/comet-atlas-mobile.svg">
+  <img src="assets/comet-atlas.svg" width="100%" alt="Comet Atlas. Daily GitHub contributions appear as star tiles over a twilight landscape. Brighter tiles represent more contributions.">
 </picture>
 
 ## Stack

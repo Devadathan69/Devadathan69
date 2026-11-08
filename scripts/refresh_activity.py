@@ -1,4 +1,4 @@
-"""Refresh public GitHub streaks and the Night Line calendar together."""
+"""Refresh public GitHub streaks and the Comet Atlas calendar together."""
 
 from datetime import date, timedelta
 from itertools import groupby, takewhile
@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 import subprocess
 
-from night_line import render_night_line
+from comet_atlas import render_comet_atlas
 
 
 USERNAME = "Devadathan69"
@@ -71,8 +71,8 @@ def main():
     readme = ROOT / "README.md"
     updated = {
         readme: update_summary(readme.read_text(encoding="utf-8"), days),
-        ROOT / "assets/night-line.svg": render_night_line(days),
-        ROOT / "assets/night-line-mobile.svg": render_night_line(days, mobile=True),
+        ROOT / "assets/comet-atlas.svg": render_comet_atlas(days),
+        ROOT / "assets/comet-atlas-mobile.svg": render_comet_atlas(days, mobile=True),
     }
     for path, content in updated.items():
         if not path.is_file() or path.read_text(encoding="utf-8") != content:
