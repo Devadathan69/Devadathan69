@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="590" height="120" viewBox="0 0 590 120" role="img" aria-labelledby="title desc">
+  <title id="title">Signal Beacon</title>
+  <desc id="desc">Decorative signal radiating from a point in orbit.</desc>
+  <defs>
+    <linearGradient id="sky" x2="1" y2="1">
+      <stop stop-color="#0B1020"/><stop offset="1" stop-color="#111B30"/>
+    </linearGradient>
+    <clipPath id="panel"><rect x="1" y="1" width="588" height="118" rx="15"/></clipPath>
+
+    <radialGradient id="beacon-halo">
+      <stop stop-color="#58C7FF" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#58C7FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g clip-path="url(#panel)">
+    <rect width="590" height="120" fill="url(#sky)"/>
+  <path d="M23 60H567" stroke="#3A5171" stroke-opacity=".75" stroke-dasharray="2 7"/>
+  <path d="M170 60h64m122 0h64" stroke="#506489" stroke-opacity=".6"/>
+  <circle cx="170" cy="60" r="2" fill="#A89BFF" opacity=".65"/>
+  <circle cx="420" cy="60" r="2" fill="#58C7FF" opacity=".65"/>
+  <g transform="translate(295 60)">
+    <ellipse rx="68" ry="26" transform="rotate(-17)" fill="none" stroke="#688CC3" stroke-opacity=".27"/>
+    <circle r="35" fill="url(#beacon-halo)"/>
+    <circle r="18" fill="none" stroke="#58C7FF" stroke-opacity=".38"/>
+    <circle r="31" fill="none" stroke="#A89BFF" stroke-opacity=".22"/>
+    <path d="M0-9 7 0 0 9-7 0Z" fill="#1B4766" stroke="#8CE1FF"/>
+    <circle r="2.5" fill="#E6F7FF"/>
+  </g>
+  <text x="24" y="27" font-family="Consolas, 'Liberation Mono', monospace" font-size="14" text-anchor="start" fill="#E8EEF9" font-weight="600">SIGNAL BEACON</text>
+  <text x="566" y="99" font-family="Consolas, 'Liberation Mono', monospace" font-size="13" text-anchor="end" fill="#A89BFF">CONTACT / 04</text>
+  </g>
+  <rect x=".6" y=".6" width="588.8" height="118.8" rx="15" fill="none" stroke="#4A5873" stroke-width="1.2"/>
+</svg>
