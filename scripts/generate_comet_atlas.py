@@ -11,6 +11,8 @@ from visuals import COMET, COMET_DEFS, MONO, ROOT, flight, flight_samples, svg, 
 
 SNAPSHOT = ROOT / "data/public-calendar.json"
 COLORS = ("#1D293C", "#1A593D", "#238636", "#3FB950", "#69D67D")
+DURATION = 22
+PASS = (.14, .57)
 MOTION_CSS = "  <style>@media (prefers-reduced-motion: reduce) { .motion { display: none; } }</style>\n"
 
 
@@ -31,7 +33,7 @@ def draw_band(weeks, left, top, pitch, samples):
         x = left + pitch * column
         month = week[-1][0]
         if month.month != previous_month and column - last_label >= 3 and column < len(weeks) - 1:
-            labels.append(f'  <text x="{x:.2f}" y="{top - 10}">{month:%b}</text>')
+            labels.append(f'  <text x="{x:.2f}" y="{top - 12}">{month:%b}</text>')
             previous_month, last_label = month.month, column
         for day, row, count, level in week:
             y = top + 15 * row
@@ -42,7 +44,7 @@ def draw_band(weeks, left, top, pitch, samples):
                 f'<rect x="{x:.2f}" y="{y}" width="12" height="12" rx="2" fill="{COLORS[level]}"/>{mark}</g>'
             )
             if samples and count:
-                glint = wake(x, y, 23, samples, 20, 12)
+                glint = wake(x, y, 22, samples, DURATION, 12)
                 if glint:
                     glints.append(glint)
     for row, label in ((1, "M"), (3, "W"), (5, "F")):
@@ -55,64 +57,83 @@ def draw_band(weeks, left, top, pitch, samples):
 {star_markup}"""
 
 
-def observatory(width, height):
+def observatory(width, height, animated):
     rng = Random(374)
     stars = []
-    for _ in range(32):
-        x, y = 24 + rng.random() * (width - 48), height - 128 + rng.random() * 63
-        stars.append(f'  <circle cx="{x:.1f}" cy="{y:.1f}" r="{.5 + rng.random() * .75:.2f}" fill="#D4E0FF" opacity="{.28 + rng.random() * .44:.2f}"/>')
+    for _ in range(48):
+        x, y = 24 + rng.random() * (width - 48), height - 157 + rng.random() * 88
+        stars.append(f'  <circle cx="{x:.1f}" cy="{y:.1f}" r="{.4 + rng.random() * .82:.2f}" fill="#C3D6FF" opacity="{.17 + rng.random() * .48:.2f}"/>')
     star_markup = "\n".join(stars)
-    return f"""  <ellipse cx="{width * .76:g}" cy="{height - 74}" rx="{width * .5:g}" ry="116" fill="url(#violet)"/>
-  <ellipse cx="{width * .29:g}" cy="{height - 41}" rx="{width * .45:g}" ry="105" fill="url(#teal)"/>
-{star_markup}
-  <g transform="translate(0 {height - 88}) scale({width / 960:g} 1)">
-    <path d="M0 30 53 29 112 19 170 27 225 14 279 20 330 14 392 22 447 21 507 27 552 17 611 25 671 18 736 21 802 14 864 19 917 12 960 20v43H0Z" fill="#1D2B45"/>
-    <path d="M0 40 57 33 115 35 176 32 232 39 291 33 347 36 399 31 460 39 522 32 580 36 645 32 696 35 740 29 791 31 842 26 899 32 960 27v36H0Z" fill="#132037"/>
-    <path d="M0 45 57 39 115 41 176 38 232 45 291 39 347 42 399 37 460 45 522 38 580 42 645 38 696 41 740 35 791 37 842 32 899 38 960 33" fill="none" stroke="#36506D" stroke-opacity=".48"/>
+    drift = (
+        f'<g class="motion"><animateTransform attributeName="transform" type="translate" '
+        f'values="0 0;17 -4;0 0" keyTimes="0;.5;1" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1" '
+        f'dur="{DURATION}s" repeatCount="indefinite"/>'
+        f'<ellipse cx="{width * .77:g}" cy="{height - 112}" rx="{width * .57:g}" ry="143" fill="url(#violet)"/></g>'
+        if animated else ""
+    )
+    return f"""  <ellipse cx="{width * .77:g}" cy="{height - 112}" rx="{width * .57:g}" ry="143" fill="url(#violet)" opacity=".63"/>
+  <ellipse cx="{width * .28:g}" cy="{height - 82}" rx="{width * .58:g}" ry="94" fill="url(#teal)"/>
+{drift}
+  <g transform="translate({width * .23:g} {height - 119}) rotate(-13)">
+    <ellipse rx="{width * .17:g}" ry="22" fill="none" stroke="#7496C3" stroke-opacity=".21"/>
+    <ellipse rx="{width * .20:g}" ry="30" fill="none" stroke="#7496C3" stroke-opacity=".13" stroke-dasharray="2 5"/>
+    <circle cx="{width * .104:g}" cy="-17.3" r="1.7" fill="#A1DFFF" opacity=".78"/>
   </g>
-  <g transform="translate({width - 96} {height - 85})" stroke="#6987A5" stroke-width="1" fill="#1D2C45">
-    <path d="M0 21v-5a16 16 0 0 1 32 0v5Z"/>
-    <rect x="-2" y="21" width="36" height="11" rx="1"/>
-    <path d="M16 0c5 4 8 10 8 20M-7 32h45" fill="none"/>
-    <path d="M4 24h7m14 0h4" stroke="#85D5DE" opacity=".75"/>
-  </g>"""
+{star_markup}
+  <g transform="translate(0 {height - 122}) scale({width / 960:g} 1)">
+    <path d="M0 40Q48 22 91 34T180 29Q232 13 274 30T366 37Q418 23 462 42T567 37Q624 18 660 34T758 41Q839 17 880 24T960 18V90H0Z" fill="#23304E"/>
+    <path d="M0 57Q78 37 134 52T234 46Q278 34 319 49T423 52Q475 39 524 56T625 53Q686 43 743 50T834 41Q898 30 960 37V90H0Z" fill="#1A2943"/>
+    <path d="M0 73Q66 50 131 61T263 67Q337 49 422 61T575 73Q642 55 693 57T801 48Q848 43 881 52T960 45V90H0Z" fill="#111D32"/>
+    <path d="M0 73Q66 50 131 61T263 67Q337 49 422 61T575 73Q642 55 693 57T801 48Q848 43 881 52T960 45" fill="none" stroke="#59719C" stroke-opacity=".52"/>
+  </g>
+  <g transform="translate({width - (102 if width < 600 else 142)} {height - 129})"
+     stroke="#6683A9" stroke-width="1.15" fill="#14213A" stroke-linejoin="round">
+    <path d="M-21 56v-13l15-7h59l14 7v13Z"/>
+    <path d="M0 42V28a23 23 0 0 1 46 0v14Z"/>
+    <path d="M12 39V26q0-11 7-20l5-1q-5 12-5 21v13Z" fill="#0A1427"/>
+    <path d="M6 33c0-13 4-22 10-26M39 31c0-10-4-18-10-22M-24 56h95" fill="none" opacity=".62"/>
+    <path d="M-12 47h9m14 0h6m13 0h6m14 0h9" stroke="#AADFF1" opacity=".74"/>
+    <path d="M29 12l10-9" stroke="#B1DDF8" stroke-width="2.5"/>
+    <path d="M37 4l4-3" stroke="#E2F8FF" stroke-width="2"/>
+  </g>
+  <path d="M27 {height - 38}h{width - 54}" stroke="#34455F"/>"""
 
 
 def render(days, mobile, animated):
-    width, height = (480, 455) if mobile else (960, 322)
+    width, height = (480, 505) if mobile else (960, 370)
     weeks = calendar_weeks(days)
     split = (len(weeks) + 1) // 2
     bands = (weeks[:split], weeks[split:]) if mobile else (weeks,)
     left = 48
     pitch = (width - left - 29 - 12) / (len(bands[0]) - 1)
-    track = ((-110, height - 110), (width * .21, height - 74),
-             (width * .61, 87), (width + 137, 100))
-    samples = flight_samples(track, .21, .64) if animated else ()
+    track = ((-125, height - 147), (width * .16, height - 62),
+             (width * .62, 74), (width + 158, 102))
+    samples = flight_samples(track, *PASS) if animated else ()
     chart = "\n".join(
-        draw_band(band, left, 82 + 127 * index, pitch, samples)
+        draw_band(band, left, 86 + 136 * index, pitch, samples)
         for index, band in enumerate(bands)
     )
     legend = "\n".join(
         f'  <rect x="{width - 116 + 12 * index}" y="{height - 23}" width="8" height="8" rx="1.4" fill="{color}"/>'
         for index, color in enumerate(COLORS)
     )
-    still = f'<g class="still" transform="translate({width - 168} {height - 111}) rotate(-9)">{COMET}</g>'
-    comet = flight(track, 20, .21, .64) if animated else ""
+    still = f'<g class="still" transform="translate({width * .66:g} {height - 131}) rotate(-14)">{COMET}</g>'
+    comet = flight(track, DURATION, *PASS) if animated else ""
     css = MOTION_CSS + "  <style>@media (prefers-reduced-motion: no-preference) { .still { display: none; } }</style>\n" if animated else ""
     defs = """
     <radialGradient id="violet">
-      <stop stop-color="#7665AB" stop-opacity=".44"/><stop offset="1" stop-color="#7665AB" stop-opacity="0"/>
+      <stop stop-color="#8174BE" stop-opacity=".48"/><stop offset="1" stop-color="#7665AB" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="teal">
-      <stop stop-color="#32828E" stop-opacity=".31"/><stop offset="1" stop-color="#32828E" stop-opacity="0"/>
+      <stop stop-color="#359AA5" stop-opacity=".32"/><stop offset="1" stop-color="#32828E" stop-opacity="0"/>
     </radialGradient>
 """ + COMET_DEFS
-    body = f"""{observatory(width, height)}
-  <path d="M24 48h{width - 48}M24 {height - 35}h{width - 48}" stroke="#34455F"/>
+    body = f"""{observatory(width, height, animated)}
+  <path d="M24 48h{width - 48}" stroke="#34455F"/>
   <path d="M32 17q0 9 8 9-8 0-8 9 0-9-8-9 8 0 8-9Z" fill="none" stroke="#A89BFF" stroke-width="1.3"/>
-  <g font-family="{MONO}" font-size="13" letter-spacing="1.15">
+  <g font-family="{MONO}" font-size="{15 if mobile else 14}" letter-spacing="1.15">
     <text x="49" y="31" font-weight="700" fill="#E8EEF9">COMET ATLAS</text>
-    <text x="{width - 25}" y="31" text-anchor="end" fill="#98A7C2">PUBLIC CALENDAR / 02</text>
+    <text x="{width - 25}" y="31" text-anchor="end" fill="#A89BFF">PUBLIC CALENDAR / 02</text>
   </g>
 {chart}
 {still}
