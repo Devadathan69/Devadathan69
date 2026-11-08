@@ -413,7 +413,7 @@
   <rect x="895.2" y="137" width="12" height="12" rx="2.2" fill="#303b4d"><title>05 Nov 2026 · 0</title></rect>
   <rect x="895.2" y="152" width="12" height="12" rx="2.2" fill="#303b4d"><title>06 Nov 2026 · 0</title></rect>
   <rect x="895.2" y="167" width="12" height="12" rx="2.2" fill="#ae7c64"><title>07 Nov 2026 · 7</title></rect>
-  <rect x="912.0" y="77" width="12" height="12" rx="2.2" fill="#ae7c64"><title>08 Nov 2026 · 4</title></rect>
+  <rect x="912.0" y="77" width="12" height="12" rx="2.2" fill="#ae7c64"><title>08 Nov 2026 · 5</title></rect>
   <rect x="24" y="201" width="912" height="56" rx="8" fill="url(#water)"/>
   <g clip-path="url(#rail-window)">
     <circle cx="864" cy="212" r="13" fill="#e9b6a6" opacity=".24"/>

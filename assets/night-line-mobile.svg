@@ -416,7 +416,7 @@
   <rect x="401.5" y="263" width="12" height="12" rx="2.2" fill="#303b4d"><title>05 Nov 2026 · 0</title></rect>
   <rect x="401.5" y="278" width="12" height="12" rx="2.2" fill="#303b4d"><title>06 Nov 2026 · 0</title></rect>
   <rect x="401.5" y="293" width="12" height="12" rx="2.2" fill="#ae7c64"><title>07 Nov 2026 · 7</title></rect>
-  <rect x="416.8" y="203" width="12" height="12" rx="2.2" fill="#ae7c64"><title>08 Nov 2026 · 4</title></rect>
+  <rect x="416.8" y="203" width="12" height="12" rx="2.2" fill="#ae7c64"><title>08 Nov 2026 · 5</title></rect>
   <rect x="24" y="327" width="432" height="56" rx="8" fill="url(#water)"/>
   <g clip-path="url(#rail-window)">
     <circle cx="384" cy="338" r="13" fill="#e9b6a6" opacity=".24"/>
