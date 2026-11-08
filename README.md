@@ -1,4 +1,4 @@
-# Devadathan M R
+![Devadathan M R](assets/name.svg)
 
 **Full-stack developer · Applied AI**
 
@@ -6,18 +6,23 @@ I build web apps for subscription billing and AI-assisted review. I get a workin
 
 [Browse repositories ↗](https://github.com/Devadathan69?tab=repositories)
 
+## GitHub activity
+
+<!-- public-activity:start -->
+
+**557** lifetime public contributions · **373** in the past year
+
+Public streaks · **2d** current · **9d** longest
+
+<!-- public-activity:end -->
+
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/night-line-mobile.svg">
+  <img src="assets/night-line.svg" width="100%" alt="Night Line. Daily GitHub contribution blocks light up like windows above a night train. Brighter windows represent more contributions.">
+</picture>
+
 ## Stack
 
 - **Web** · TypeScript, React, Next.js
 - **Backend & data** · Node.js, Python, PostgreSQL
 - **Mobile** · Flutter, Dart
-
-## GitHub activity
-
-**716** lifetime contributions · snapshot from 7 Nov 2026
-
-<!-- public-streaks:start -->
-
-Public streaks · **2d** current · **9d** longest
-
-<!-- public-streaks:end -->
