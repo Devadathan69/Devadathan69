@@ -79,7 +79,7 @@ I like projects that leave the browser. That might mean getting a sensor reading
   <img src="assets/comet-atlas/desktop.svg" width="960" alt="Comet Atlas, a seven-day-per-week chart of Devadathan’s public GitHub activity over an observatory horizon. One tile per day, with larger stars marking more activity.">
 </picture>
 
-<sub>One tile per day from the public GitHub contribution calendar. The calendar refreshes on a schedule. [View the calendar](https://github.com/Devadathan69#js-contribution-activity) · [Visual sources and maintenance](docs/VISUALS.md)</sub>
+<sub>One tile per day from the public GitHub contribution calendar. The calendar refreshes on a schedule. [View the calendar](https://github.com/Devadathan69?tab=overview#js-contribution-activity-description) · [Visual sources and maintenance](docs/VISUALS.md)</sub>
 
 ## Connect
 
