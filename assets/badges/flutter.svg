@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="104" height="32" viewBox="0 0 104 32" role="img" aria-labelledby="label">
-  <title id="label">Flutter</title>
-  <rect x=".5" y=".5" width="103" height="31" rx="4" fill="#19539b" stroke="#d6f7ff" stroke-opacity=".19"/>
-  <path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z" transform="translate(10 8) scale(.67)" fill="#d6f7ff" fill-rule="evenodd"/>
-  <text x="34" y="20.5" fill="#d6f7ff" font-family="Arial, 'Liberation Sans', sans-serif" font-weight="700" font-size="12" letter-spacing="1.15">FLUTTER</text>
-</svg>
