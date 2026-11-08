@@ -151,8 +151,8 @@
   <rect x="234.0" y="77" width="12" height="12" rx="2.2" fill="#303851"><title>08 Feb 2026 · 0</title></rect>
   <rect x="234.0" y="92" width="12" height="12" rx="2.2" fill="#303851"><title>09 Feb 2026 · 0</title></rect>
   <rect x="234.0" y="107" width="12" height="12" rx="2.2" fill="#303851"><title>10 Feb 2026 · 0</title></rect>
-  <rect x="234.0" y="122" width="12" height="12" rx="2.2" fill="#303851"><title>11 Feb 2026 · 0</title></rect>
-  <rect x="234.0" y="137" width="12" height="12" rx="2.2" fill="#8678b0"><title>12 Feb 2026 · 5</title></rect>
+  <rect x="234.0" y="122" width="12" height="12" rx="2.2" fill="#615986"><title>11 Feb 2026 · 1</title></rect>
+  <rect x="234.0" y="137" width="12" height="12" rx="2.2" fill="#8678b0"><title>12 Feb 2026 · 4</title></rect>
   <path d="M240.0 140l2.5 3-2.5 3-2.5-3Z" fill="#f6ebff" opacity=".76"/>
   <rect x="234.0" y="152" width="12" height="12" rx="2.2" fill="#615986"><title>13 Feb 2026 · 2</title></rect>
   <rect x="234.0" y="167" width="12" height="12" rx="2.2" fill="#8678b0"><title>14 Feb 2026 · 4</title></rect>
@@ -160,8 +160,8 @@
   <rect x="249.2" y="77" width="12" height="12" rx="2.2" fill="#303851"><title>15 Feb 2026 · 0</title></rect>
   <rect x="249.2" y="92" width="12" height="12" rx="2.2" fill="#303851"><title>16 Feb 2026 · 0</title></rect>
   <rect x="249.2" y="107" width="12" height="12" rx="2.2" fill="#303851"><title>17 Feb 2026 · 0</title></rect>
-  <rect x="249.2" y="122" width="12" height="12" rx="2.2" fill="#303851"><title>18 Feb 2026 · 0</title></rect>
-  <rect x="249.2" y="137" width="12" height="12" rx="2.2" fill="#f4d1bd"><title>19 Feb 2026 · 13</title></rect>
+  <rect x="249.2" y="122" width="12" height="12" rx="2.2" fill="#615986"><title>18 Feb 2026 · 1</title></rect>
+  <rect x="249.2" y="137" width="12" height="12" rx="2.2" fill="#f4d1bd"><title>19 Feb 2026 · 12</title></rect>
   <path d="M255.2 140l2.5 3-2.5 3-2.5-3Z" fill="#473753" opacity=".76"/>
   <rect x="249.2" y="152" width="12" height="12" rx="2.2" fill="#615986"><title>20 Feb 2026 · 1</title></rect>
   <rect x="249.2" y="167" width="12" height="12" rx="2.2" fill="#303851"><title>21 Feb 2026 · 0</title></rect>
@@ -434,8 +434,8 @@
   <rect x="371.1" y="248" width="12" height="12" rx="2.2" fill="#615986"><title>21 Oct 2026 · 1</title></rect>
   <rect x="371.1" y="263" width="12" height="12" rx="2.2" fill="#8678b0"><title>22 Oct 2026 · 5</title></rect>
   <path d="M377.1 266l2.5 3-2.5 3-2.5-3Z" fill="#f6ebff" opacity=".76"/>
-  <rect x="371.1" y="278" width="12" height="12" rx="2.2" fill="#615986"><title>23 Oct 2026 · 2</title></rect>
-  <rect x="371.1" y="293" width="12" height="12" rx="2.2" fill="#8678b0"><title>24 Oct 2026 · 7</title></rect>
+  <rect x="371.1" y="278" width="12" height="12" rx="2.2" fill="#615986"><title>23 Oct 2026 · 3</title></rect>
+  <rect x="371.1" y="293" width="12" height="12" rx="2.2" fill="#8678b0"><title>24 Oct 2026 · 6</title></rect>
   <path d="M377.1 296l2.5 3-2.5 3-2.5-3Z" fill="#f6ebff" opacity=".76"/>
   <rect x="386.3" y="203" width="12" height="12" rx="2.2" fill="#f4d1bd"><title>25 Oct 2026 · 14</title></rect>
   <path d="M392.3 206l2.5 3-2.5 3-2.5-3Z" fill="#473753" opacity=".76"/>
@@ -454,7 +454,7 @@
   <rect x="401.5" y="278" width="12" height="12" rx="2.2" fill="#303851"><title>06 Nov 2026 · 0</title></rect>
   <rect x="401.5" y="293" width="12" height="12" rx="2.2" fill="#8678b0"><title>07 Nov 2026 · 7</title></rect>
   <path d="M407.5 296l2.5 3-2.5 3-2.5-3Z" fill="#f6ebff" opacity=".76"/>
-  <rect x="416.8" y="203" width="12" height="12" rx="2.2" fill="#8678b0"><title>08 Nov 2026 · 5</title></rect>
+  <rect x="416.8" y="203" width="12" height="12" rx="2.2" fill="#8678b0"><title>08 Nov 2026 · 6</title></rect>
   <path d="M422.8 206l2.5 3-2.5 3-2.5-3Z" fill="#f6ebff" opacity=".76"/>
   <g clip-path="url(#horizon)">
     <g transform="translate(0 319)">
