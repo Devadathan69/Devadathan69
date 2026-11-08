@@ -15,14 +15,17 @@ COMET_DEFS = """
       <stop offset="1" stop-color="#D8F6FF"/>
     </linearGradient>
     <radialGradient id="halo">
-      <stop stop-color="#A3EDFF" stop-opacity=".69"/>
+      <stop stop-color="#DEF8FF" stop-opacity=".82"/>
+      <stop offset=".35" stop-color="#58C7FF" stop-opacity=".39"/>
       <stop offset="1" stop-color="#58C7FF" stop-opacity="0"/>
     </radialGradient>
 """
-COMET = """<circle r="15" fill="url(#halo)"/>
-    <path d="M-120 10Q-54 9-4-2Q2-2 1 1Q-46 11-120 10Z" fill="url(#tail)"/>
-    <path d="M-87 15Q-32 13-4 1M-62-3Q-28 2-5 0" fill="none" stroke="url(#tail)" stroke-width="1.1"/>
-    <circle r="2.9" fill="#F4FDFF"/>"""
+COMET = """<path d="M-158 19Q-60 17-5-8Q8-7 8 3Q-45 31-158 19Z" fill="url(#tail)" opacity=".22"/>
+    <path d="M-134 14Q-56 13-4-3Q5-4 4 2Q-44 21-134 14Z" fill="url(#tail)" opacity=".72"/>
+    <path d="M-91 13Q-32 8-2 0M-113 23Q-42 20-5 2M-70 0Q-35 1-5-2" fill="none" stroke="url(#tail)" stroke-width="1.05"/>
+    <ellipse cx="-4" rx="23" ry="14" fill="url(#halo)"/>
+    <path d="M-27 4Q-13 2 1-1" stroke="#C7F2FF" stroke-width="1.35" stroke-linecap="round" opacity=".8"/>
+    <ellipse rx="4.3" ry="2.6" fill="#F4FDFF"/>"""
 
 
 def svg(width, height, title, description, content, defs="", css=""):

@@ -7,68 +7,113 @@
 
 # Building things I wish existed.
 
-I’m **Devadathan M R**, or Dathan, a third-year Computer Science & Engineering (Data Science) student at Mar Athanasius College of Engineering, Kothamangalam (2024–2028). I learn by building full-stack and mobile apps, AI agents, and embedded prototypes, often under a hackathon deadline.
+I’m **Devadathan M R**, or Dathan, a Computer Science & Engineering (Data Science) undergraduate at Mar Athanasius College of Engineering, Kothamangalam. I learn by building things I can put in someone’s hands, from a maternal-care wearable to a résumé builder that starts with a conversation.
 
-Kerala, India · [Repositories](https://github.com/Devadathan69?tab=repositories) · [LinkedIn](https://www.linkedin.com/in/devadathanmr)
+Kerala, India · [Explore my work](#selected-experiments) · [LinkedIn](https://www.linkedin.com/in/devadathanmr)
 
 ## Selected experiments
 
 ### 01 · MaatriWatch
 
-A team-built maternal-care prototype for clinician follow-up. I worked on hardware and backend, including authenticated ESP32 telemetry and the pipeline that separates live updates from stored patient records.
+**Hardware & health** · A maternal-care prototype for keeping patient concerns and wearable readings available for clinician follow-up.
 
-`ESP32` `Flutter` `Flask` `PostgreSQL` · [Source](https://github.com/Devadathan69/MaatriWatch) · [Recorded demo](https://github.com/Devadathan69/MaatriWatch#product-demo)
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/projects/maatriwatch-mobile.webp">
+  <img src="assets/projects/maatriwatch.webp" width="960" alt="MaatriWatch product demo showing the team's handheld wearable and the Flutter app's sample monthly concern summary.">
+</picture>
 
-<details>
-  <summary>See the patient app</summary>
-  <p><img src="assets/projects/maatriwatch.png" width="240" alt="MaatriWatch demo recording showing a monthly summary of sample symptom reports in the patient app."></p>
-</details>
+I worked on the team’s hardware and backend, including authenticated ESP32 telemetry and the pipeline that separates live updates from stored records.
 
-### 02 · LoopLedger
+`ESP32` `Flutter` `Flask` `PostgreSQL` · [Repository ↗](https://github.com/Devadathan69/MaatriWatch) · [Recorded demo ↗](https://github.com/Devadathan69/MaatriWatch#product-demo)
 
-A team-built workspace for quotes, subscriptions, and payments. I worked on the core platform and billing services, including contract price snapshots and transactional invoice generation to prevent duplicate billing.
+### 02 · JobSathi
 
-`Next.js` `TypeScript` `PostgreSQL` · [Source](https://github.com/Devadathan69/make-a-ton) · [Hosted demo (sign-in required)](https://loopledger-demo.vercel.app/)
+**Voice & accessibility** · A résumé builder and job search for people who prefer speaking to filling out forms.
 
-### 03 · JobSathi
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/projects/jobsathi-mobile.webp">
+  <img src="assets/projects/jobsathi.webp" width="960" alt="JobSathi’s running web frontend with its voice-powered résumé landing page and a language picker showing multiple Indian scripts.">
+</picture>
 
-A voice-first résumé builder and job search for people who prefer speaking to filling out forms. Our team connected Indic speech recognition to English translation and PDF generation. I contributed to the frontend.
+Our team connected Indic speech recognition to English translation and PDF generation. I contributed to the frontend.
 
-`React` `FastAPI` `AI4Bharat` `Gemini` · [Project source](https://github.com/mathew1046/jobsathi) · [My frontend change](https://github.com/mathew1046/jobsathi/commit/128146a)
+`React` `FastAPI` `AI4Bharat` `Gemini` · [Repository ↗](https://github.com/Devadathan69/jobsathi) · [My frontend contribution ↗](https://github.com/mathew1046/jobsathi/commit/128146a)
 
-### 04 · SentinelOS
+### 03 · GhostWire
 
-A hackathon prototype for coordinating incident response. Agents exchange events through a publish-and-subscribe bus, a person approves proposed missions, and a simulated edge mode demonstrates what can still run when the connection drops.
+**Creative computing** · A cooperative browser raid where a squad times attacks to break a boss’s shield.
 
-`React` `FastAPI` `Gemini` · [Source](https://github.com/Devadathan69/SentinelOS)
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/projects/ghostwire-mobile.webp">
+  <img src="assets/projects/ghostwire.webp" width="960" alt="GhostWire gameplay with two heroes facing the shielded Ember Colossus in a circular 3D arena.">
+</picture>
+
+Socket.IO keeps the raid state in sync across devices. Camera gestures map to combat actions alongside keyboard and touch controls.
+
+`TypeScript` `Three.js` `Socket.IO` `MediaPipe` · [Repository ↗](https://github.com/Devadathan69/GhostWire) · [Recorded gameplay ↗](https://github.com/Devadathan69/GhostWire#demo-video)
+
+### 04 · LoopLedger
+
+**Full-stack systems** · A workspace that follows a subscription from its first quote through invoices and payments.
+
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/projects/loopledger-mobile.webp">
+  <img src="assets/projects/loopledger.webp" width="960" alt="LoopLedger’s finance and billing dashboard showing sample subscriptions, invoices, and payment totals.">
+</picture>
+
+I worked on the team’s core platform and billing services. Contracts snapshot prices, and invoice generation runs in a transaction to prevent duplicate billing.
+
+`Next.js` `TypeScript` `PostgreSQL` · [Repository ↗](https://github.com/Devadathan69/make-a-ton) · [Hosted demo · sign-in required ↗](https://loopledger-demo.vercel.app/dashboard)
 
 ### 05 · Malayalam NPC Companion
 
-A local GTA San Andreas prototype that lets players speak to pedestrians in Malayalam. A native adapter connects push-to-talk and subtitles to a voice pipeline that uses the game’s current location, clock, and weather.
+**Voice & game modding** · A local GTA San Andreas prototype that lets players speak to pedestrians in Malayalam.
 
-`C++` `Node.js` `SQLite` `OpenAI` `ElevenLabs` · [Source](https://github.com/Devadathan69/DevDayHack) · [Recorded demo (329 MB)](https://github.com/Devadathan69/DevDayHack/blob/main/demo/demo.mp4)
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/projects/devdayhack-mobile.webp">
+  <img src="assets/projects/devdayhack.webp" width="960" alt="GTA San Andreas demo frame showing the player speaking to a pedestrian with the mod’s speech recognition status on screen.">
+</picture>
 
-## Experience
+A native C++ adapter connects push-to-talk and in-game subtitles to a dialogue pipeline that can use the player’s location, game clock, and weather.
 
-- **KeyValue Software Systems** · Full-Stack Developer Intern (started 2025). Built React pages for Netra’s admin dashboard and worked on agents for internal automation and product use cases with Claude Agent SDK, LangGraph, and OpenAI Agents SDK.
-- **ComputerValley IT Solutions** · Software Developer Intern (2025). Prototyped a Gemini workflow that turned product requirements into tasks and suggested assignees using skills and project history. Worked in Python, Flask, and Streamlit.
+`C++` `Node.js` `SQLite` `OpenAI` `ElevenLabs` · [Repository ↗](https://github.com/Devadathan69/DevDayHack) · [Recorded demo · 329 MB ↗](https://github.com/Devadathan69/DevDayHack/blob/main/demo/demo.mp4)
 
 ## Milestones
 
-- **Hardware Winner, Hackatly 4.0** · Team CodeBlooded. [Organizer results](https://iedc-tly.github.io/Hackatly4.0/)
-- **i-Hack finalist at IIT Bombay** · Team Arrakis, with JobSathi.
-- **Local Lead, NASA Space Apps Challenge 2026** · [Kothamangalam event](https://www.spaceappschallenge.org/2026/local-events/kothamangalam/)
-- **Webmaster, IEEE MACE Student Branch** · Built the IAS chapter website. The chapter received the 2026 IEEE IAS **Student Branch Chapter with Best Website** award. [IEEE results](https://ias.ieee.org/wp-content/uploads/2026/06/2026-Outstanding-Chapter-Awards-1.pdf)
+| Recognition | Work |
+| :--- | :--- |
+| **Hardware Winner** · Hackatly 4.0 | MaatriWatch with Team CodeBlooded. [Organizer results ↗](https://iedc-tly.github.io/Hackatly4.0/) |
+| **i-Hack finalist** · IIT Bombay, 2025 | JobSathi with Team Arrakis. |
+| **Local Lead** · NASA Space Apps Challenge, 2026 | Led the [Kothamangalam event ↗](https://www.spaceappschallenge.org/2026/local-events/kothamangalam/). |
+| **Student Branch Chapter with Best Website** · IEEE IAS, 2026 | Built the chapter’s site as webmaster. The award went to the MACE IAS chapter. [IEEE results ↗](https://ias.ieee.org/wp-content/uploads/2026/06/2026-Outstanding-Chapter-Awards-1.pdf) |
 
-## Toolkit
+## Experience
 
-- **Web and data** · TypeScript, React, Next.js, Node.js, Python, Flask, FastAPI, PostgreSQL
-- **Mobile and embedded** · Flutter, Dart, ESP32, Arduino, sensor telemetry
-- **Applied AI** · LangGraph, Claude Agent SDK, OpenAI Agents SDK, TFLite, multilingual speech
+### KeyValue Software Systems
+
+<sub>FULL-STACK DEVELOPER INTERN · STARTED 2025</sub>
+
+Built React pages for Netra’s admin dashboard and worked on agents for internal automation and product workflows with Claude Agent SDK, LangGraph, and OpenAI Agents SDK.
+
+### ComputerValley IT Solutions
+
+<sub>SOFTWARE DEVELOPER INTERN · 2025</sub>
+
+Prototyped a Gemini workflow that turned product requirements into tasks and suggested assignees using skills and project history. Built with Python, Flask, and Streamlit.
+
+## The Toolkit
+
+| Capability | Tools I reach for |
+| :--- | :--- |
+| <img src="assets/toolkit/agents.svg" width="18" height="18" alt=""> **AI & agents** | LangGraph · Claude Agent SDK · OpenAI Agents SDK · TFLite |
+| <img src="assets/toolkit/web.svg" width="18" height="18" alt=""> **Full-stack engineering** | TypeScript · React · Next.js · Node.js · Python · FastAPI · Flask |
+| <img src="assets/toolkit/mobile.svg" width="18" height="18" alt=""> **Mobile development** | Flutter · Dart |
+| <img src="assets/toolkit/embedded.svg" width="18" height="18" alt=""> **Embedded & IoT** | ESP32 · Arduino · sensor telemetry |
+| <img src="assets/toolkit/data.svg" width="18" height="18" alt=""> **Data & infrastructure** | PostgreSQL · SQLite · Git · GitHub Actions |
 
 ## Inside the lab
 
-I like projects that leave the browser. That might mean getting a sensor reading into a dashboard or getting a game character to respond in the language I speak at home.
+Some days it’s getting a sensor to talk to a dashboard. Other days it’s getting a game character to speak Malayalam. Either way, I like getting a prototype in front of someone early enough to see what I missed.
 
 ## Comet Atlas
 
@@ -76,7 +121,7 @@ I like projects that leave the browser. That might mean getting a sensor reading
   <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="assets/comet-atlas/mobile-static.svg">
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/comet-atlas/desktop-static.svg">
   <source media="(max-width: 600px)" srcset="assets/comet-atlas/mobile.svg">
-  <img src="assets/comet-atlas/desktop.svg" width="960" alt="Comet Atlas, a seven-day-per-week chart of Devadathan’s public GitHub activity over an observatory horizon. One tile per day, with larger stars marking more activity.">
+  <img src="assets/comet-atlas/desktop.svg" width="960" alt="Comet Atlas, a seven-day-per-week chart of Devadathan’s public GitHub activity above a nighttime observatory. One tile per day, with larger stars marking more activity.">
 </picture>
 
 <sub>One tile per day from the public GitHub contribution calendar. The calendar refreshes on a schedule. [View the calendar](https://github.com/Devadathan69?tab=overview#js-contribution-activity-description) · [Visual sources and maintenance](docs/VISUALS.md)</sub>
