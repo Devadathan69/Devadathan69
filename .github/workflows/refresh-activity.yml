@@ -6,7 +6,6 @@ on:
     paths:
       - .github/workflows/refresh-activity.yml
       - scripts/refresh_activity.py
-      - scripts/comet_atlas.py
   schedule:
     - cron: "2-59/5 * * * *"
   workflow_dispatch:
@@ -23,13 +22,13 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-      - name: Read public contributions and render Comet Atlas
+      - name: Update public contribution streaks
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 scripts/refresh_activity.py
-      - name: Publish updated activity
+      - name: Publish updated README
         run: |
-          git add README.md assets/comet-atlas.svg assets/comet-atlas-mobile.svg
+          git add README.md
           if git diff --cached --quiet; then
             exit 0
           fi
