@@ -10,8 +10,6 @@ I build web apps for subscription billing and AI-assisted review. I get a workin
 
 <!-- public-activity:start -->
 
-**558** lifetime public contributions · **374** in the past year
-
 Public streaks · **2d** current · **9d** longest
 
 <!-- public-activity:end -->
