@@ -10,7 +10,6 @@
 <p align="center">
   <a href="https://github.com/Devadathan69"><img src="assets/badges/github.svg" height="32" alt="Follow Devadathan on GitHub"></a>
   <a href="https://github.com/Devadathan69?tab=repositories"><img src="assets/badges/repos.svg" height="32" alt="Browse Devadathan’s repositories"></a>
-  <a href="https://loopledger-demo.vercel.app/"><img src="assets/badges/demo.svg" height="32" alt="Try LoopLedger live"></a>
 </p>
 
 ## ⚡ About Me
@@ -38,38 +37,6 @@ const devadathan = {
 
 **Tools & Testing**  
 ![Git](assets/badges/git.svg) ![Docker](assets/badges/docker.svg) ![Vitest](assets/badges/vitest.svg) ![Playwright](assets/badges/playwright.svg)
-
-## 🎮 Featured Projects
-
-<table width="100%">
-  <tr><td>
-    <a href="https://github.com/Devadathan69/GhostWire#demo-video">
-      <img src="assets/projects/ghostwire.jpg" width="960" alt="GhostWire · Heroes battle the Ember Colossus in a 3D arena.">
-    </a>
-    <p>Control a hero with your movements and coordinate attacks with friends to break the boss’s shield.</p>
-    <p><strong><a href="https://github.com/Devadathan69/GhostWire#demo-video">Watch gameplay ↗</a></strong> · <a href="https://github.com/Devadathan69/GhostWire">Source code</a></p>
-  </td></tr>
-</table>
-
-<table width="100%">
-  <tr><td>
-    <a href="https://loopledger-demo.vercel.app/">
-      <img src="assets/projects/loopledger.jpg" width="960" alt="LoopLedger · Finance and billing dashboard populated with demo data.">
-    </a>
-    <p>Follow a quote through recurring invoices and payments, with a breakdown of how each charge was calculated.</p>
-    <p><strong><a href="https://loopledger-demo.vercel.app/">Open the live demo ↗</a></strong> · <a href="https://github.com/Devadathan69/make-a-ton">Source code</a><br><sub>Demo sign-in required</sub></p>
-  </td></tr>
-</table>
-
-<table width="100%">
-  <tr><td>
-    <a href="https://github.com/Devadathan69/MaatriWatch#product-demo">
-      <img src="assets/projects/maatriwatch.jpg" width="960" alt="MaatriWatch · Patient app screens for symptom history and SOS support.">
-    </a>
-    <p>A team prototype that brings wearable readings and symptom notes into a clinician’s follow-up workflow.</p>
-    <p><strong><a href="https://github.com/Devadathan69/MaatriWatch#product-demo">Watch the walkthrough ↗</a></strong> · <a href="https://github.com/Devadathan69/MaatriWatch">Source code</a></p>
-  </td></tr>
-</table>
 
 ## 📊 GitHub Statistics
 
