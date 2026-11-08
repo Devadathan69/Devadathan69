@@ -14,15 +14,12 @@
 
 ## ⚡ About Me
 
-I’m Devadathan. I build things people can try, from a demo that explains each line on an invoice to a boss raid you play with your webcam.
+I’m **Devadathan M R**. I like starting with the trickiest part of an idea and building a demo that lets someone try it for themselves.
 
-```typescript
-const devadathan = {
-  build: ["Web", "AI", "3D"],
-  tools: ["React", "Flutter"],
-  approach: "Build a demo first",
-} as const
-```
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/about-workbench-mobile.svg">
+  <img src="assets/about-workbench.svg" width="100%" alt="The Workbench. I build web systems that trace pricing rules to invoices, AI workflows with results people can review, and 3D games controlled by camera gestures.">
+</picture>
 
 ## 🛠️ Tech Stack
 
