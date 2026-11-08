@@ -12,9 +12,9 @@ I’m **Devadathan M R** (Dathan), a Computer Science & Engineering (Data Scienc
 ## The Toolkit
 
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 640px)" srcset="assets/toolkit/mobile-static.svg">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 820px)" srcset="assets/toolkit/mobile-static.svg">
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/toolkit/desktop-static.svg">
-  <source media="(max-width: 640px)" srcset="assets/toolkit/mobile.svg">
+  <source media="(max-width: 820px)" srcset="assets/toolkit/mobile.svg">
   <img src="assets/toolkit/desktop.svg" width="960" alt="Tech Constellation with five groups of tools. Open the toolkit text list below for all names.">
 </picture>
 
@@ -51,13 +51,11 @@ Building something interesting? I’d love to hear about it.
 <p align="center">
   <picture>
     <source media="(prefers-reduced-motion: reduce)" srcset="assets/contact/beacon-static.svg">
-    <img src="assets/contact/beacon.svg" width="590" alt="">
+    <img src="assets/contact/beacon.svg" width="550" alt="">
   </picture>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Devadathan69"><img src="assets/contact/github.svg" width="134" height="50" alt="GitHub"></a>
-  <a href="https://www.linkedin.com/in/devadathanmr"><img src="assets/contact/linkedin.svg" width="134" height="50" alt="LinkedIn"></a>
-  <a href="mailto:devadathanappu69@gmail.com"><img src="assets/contact/email.svg" width="134" height="50" alt="Email"></a>
-  <a href="https://x.com/devadathan_69"><img src="assets/contact/x.svg" width="134" height="50" alt="X"></a>
+  <a href="https://github.com/Devadathan69"><img src="assets/contact/github.svg" width="124" height="50" alt="GitHub"></a>&nbsp;<a href="https://www.linkedin.com/in/devadathanmr"><img src="assets/contact/linkedin.svg" width="124" height="50" alt="LinkedIn"></a>
+  <a href="mailto:devadathanappu69@gmail.com"><img src="assets/contact/email.svg" width="124" height="50" alt="Email"></a>&nbsp;<a href="https://x.com/devadathan_69"><img src="assets/contact/x.svg" width="124" height="50" alt="X"></a>
 </p>

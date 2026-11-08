@@ -229,12 +229,12 @@ def badge(name, icon, color):
         f'<rect x="14" y="18" width="18" height="14" rx="2" fill="none" stroke="{color}" stroke-width="1.4"/>'
         f'<path d="m15 20 8 6 8-6" fill="none" stroke="{color}" stroke-width="1.4" stroke-linecap="round"/>'
     )
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="134" height="50" viewBox="0 0 134 50">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="124" height="50" viewBox="0 0 124 50">
   <title>{name}</title>
-  <rect x=".6" y="3.6" width="132.8" height="42.8" rx="9" fill="#111B30" stroke="#4A5873" stroke-width="1.2"/>
+  <rect x=".6" y="3.6" width="122.8" height="42.8" rx="9" fill="#111B30" stroke="#4A5873" stroke-width="1.2"/>
   {mark}
   {label(42, 30, name, 15, bold=True)}
-  <path d="M114 28l6-6m-5 0h5v5" fill="none" stroke="#8EADD0" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M104 28l6-6m-5 0h5v5" fill="none" stroke="#8EADD0" stroke-width="1.2" stroke-linecap="round"/>
 </svg>
 """
 
