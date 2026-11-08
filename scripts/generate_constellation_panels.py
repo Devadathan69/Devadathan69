@@ -91,7 +91,7 @@ def trace(source, target):
     return f"M{x1 + 17:g} {y}Q{(x1 + x2) / 2:g} {y - 15} {x2 - 17:g} {y}"
 
 
-def cluster(number, name, accent, items, cols, bounds, mobile):
+def cluster(number, name, accent, items, cols, bounds, compact):
     x, y, width, height = bounds
     parts = [
         f'<rect x="{x}" y="{y}" width="{width}" height="{height}" rx="10" fill="#131E32" stroke="#2D3D57"/>',
@@ -116,7 +116,7 @@ def cluster(number, name, accent, items, cols, bounds, mobile):
             else:
                 parts.append(label(cx, cy + 4, "OAI", 12, color, align="middle", mono=True, bold=True))
             parts.extend(
-                label(cx, cy + 36 + line * 17, text, 18 if mobile else 16, align="middle")
+                label(cx, cy + 36 + line * 17, text, 18 if compact else 16, align="middle")
                 for line, text in enumerate(lines)
             )
     return "\n  ".join(parts), positions
@@ -145,8 +145,9 @@ def signal(source, target, start, end):
   </g>"""
 
 
-def toolkit(mobile, animated):
-    width = 480 if mobile else 960
+def toolkit(size, animated):
+    width = {"mobile": 480, "tablet": 640, "desktop": 960}[size]
+    compact = size != "desktop"
     desktop_bounds = (
         (24, 62, 498, 113), (534, 62, 402, 113),
         (24, 186, 498, 113), (534, 186, 402, 113),
@@ -156,17 +157,19 @@ def toolkit(mobile, animated):
     positions = {}
     next_y = 58
     for index, (name, accent, columns, items) in enumerate(CLUSTERS):
-        if mobile:
+        if compact:
+            if size == "tablet":
+                columns = len(items)
             rows = (len(items) + columns - 1) // columns
             height = 113 + (rows - 1) * 61
-            bounds = (16, next_y, 448, height)
+            bounds = (16, next_y, width - 32, height)
             next_y += height + 9
         else:
             columns, bounds = len(items), desktop_bounds[index]
-        markup, nodes = cluster(index + 1, name, accent, items, columns, bounds, mobile)
+        markup, nodes = cluster(index + 1, name, accent, items, columns, bounds, compact)
         layout.append(markup)
         positions.update(nodes)
-    height = next_y + 7 if mobile else 445
+    height = next_y + 7 if compact else 445
 
     defs = ""
     if animated:
@@ -245,8 +248,8 @@ def main():
     args = parser.parse_args()
     toolkit_dir, contact_dir = ROOT / "assets/toolkit", ROOT / "assets/contact"
     files = {
-        toolkit_dir / f"{size}{'' if animated else '-static'}.svg": toolkit(size == "mobile", animated)
-        for size in ("desktop", "mobile")
+        toolkit_dir / f"{size}{'' if animated else '-static'}.svg": toolkit(size, animated)
+        for size in ("desktop", "tablet", "mobile")
         for animated in (True, False)
     }
     files.update({contact_dir / f"beacon{'' if animated else '-static'}.svg": beacon(animated)

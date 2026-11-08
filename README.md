@@ -12,9 +12,11 @@ I’m **Devadathan M R** (Dathan), a Computer Science & Engineering (Data Scienc
 ## The Toolkit
 
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 820px)" srcset="assets/toolkit/mobile-static.svg">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 540px)" srcset="assets/toolkit/mobile-static.svg">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 940px)" srcset="assets/toolkit/tablet-static.svg">
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/toolkit/desktop-static.svg">
-  <source media="(max-width: 820px)" srcset="assets/toolkit/mobile.svg">
+  <source media="(max-width: 540px)" srcset="assets/toolkit/mobile.svg">
+  <source media="(max-width: 940px)" srcset="assets/toolkit/tablet.svg">
   <img src="assets/toolkit/desktop.svg" width="960" alt="Tech Constellation with five groups of tools. Open the toolkit text list below for all names.">
 </picture>
 

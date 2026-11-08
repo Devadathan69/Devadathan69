@@ -18,7 +18,7 @@ A 20-second loop carries a comet along a curved track over the grid. The tempora
 
 ## Tech Constellation and Signal Beacon
 
-`scripts/generate_constellation_panels.py` lays out five toolkit clusters for desktop and mobile. All labels and marks are visible from the start. A 14-second loop sends signals between React and Next.js, ESP32 and Arduino, and Git and GitHub. The signals show common pairings. The toolkit’s expandable text list is available without the image.
+`scripts/generate_constellation_panels.py` lays out five toolkit clusters for desktop, tablet, and mobile. All labels and marks are visible from the start. A 14-second loop sends signals between React and Next.js, ESP32 and Arduino, and Git and GitHub. The signals show common pairings. The toolkit’s expandable text list is available without the image.
 
 The 12-second Signal Beacon loop uses two slowly fading rings. The GitHub, LinkedIn, Email, and X badges are separate static SVGs with accessible names on their links.
 
