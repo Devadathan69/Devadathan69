@@ -1,0 +1,60 @@
+name: Comet Atlas
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/update-atlas.yml
+      - scripts/**
+  schedule:
+    - cron: "23 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: comet-atlas-${{ github.ref }}
+
+jobs:
+  validate:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Check reproducible SVGs
+        run: |
+          python3 -B scripts/generate_name_grid.py --check
+          python3 -B scripts/generate_comet_atlas.py --check
+      - name: Test the public calendar refresh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 -B scripts/generate_comet_atlas.py --refresh
+
+  refresh:
+    if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - name: Read public contributions and render the atlas
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 -B scripts/generate_comet_atlas.py --refresh
+      - name: Publish changed atlas files
+        run: |
+          git add data/public-calendar.json assets/comet-atlas
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Refresh the public Comet Atlas calendar'
+          git push
