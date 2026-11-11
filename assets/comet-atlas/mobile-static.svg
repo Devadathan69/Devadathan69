@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="455" viewBox="0 0 480 455" role="img" aria-labelledby="title desc">
   <title id="title">Comet Atlas</title>
-  <desc id="desc">Public GitHub calendar from 09 Nov 2025 to 10 Nov 2026. Each day is a tile. Brighter tiles and larger centers represent more contributions.</desc>
+  <desc id="desc">Public GitHub calendar from 09 Nov 2025 to 11 Nov 2026. Each day is a tile. Brighter tiles and larger centers represent more contributions.</desc>
   <defs>
     <linearGradient id="sky" x2="1" y2="1">
       <stop stop-color="#0B1020"/><stop offset="1" stop-color="#111B30"/>
@@ -468,13 +468,14 @@
   <g><title>08 Nov 2026 · 17 contributions</title><rect x="423.96" y="209" width="12" height="12" rx="2" fill="#69D67D"/><circle cx="429.96" cy="215" r="2.29" fill="#D3FAE0" opacity=".68"/></g>
   <g><title>09 Nov 2026 · 0 contributions</title><rect x="423.96" y="224" width="12" height="12" rx="2" fill="#1D293C"/></g>
   <g><title>10 Nov 2026 · 0 contributions</title><rect x="423.96" y="239" width="12" height="12" rx="2" fill="#1D293C"/></g>
+  <g><title>11 Nov 2026 · 1 contribution</title><rect x="423.96" y="254" width="12" height="12" rx="2" fill="#1A593D"/><circle cx="429.96" cy="260" r="0.91" fill="#D3FAE0" opacity=".68"/></g>
 <g class="still" transform="translate(312 344) rotate(-9)"><circle r="15" fill="url(#halo)"/>
     <path d="M-120 10Q-54 9-4-2Q2-2 1 1Q-46 11-120 10Z" fill="url(#tail)"/>
     <path d="M-87 15Q-32 13-4 1M-62-3Q-28 2-5 0" fill="none" stroke="url(#tail)" stroke-width="1.1"/>
     <circle r="2.9" fill="#F4FDFF"/></g>
 
   <g font-family="Consolas, 'Liberation Mono', monospace" font-size="12" fill="#C7D5E9">
-    <text x="25" y="440">09 Nov 2025 – 10 Nov 2026</text>
+    <text x="25" y="440">09 Nov 2025 – 11 Nov 2026</text>
     <text x="356" y="440" text-anchor="end">Less</text>
     <text x="455" y="440" text-anchor="end">More</text>
   </g>
