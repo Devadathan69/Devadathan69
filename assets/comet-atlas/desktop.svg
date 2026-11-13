@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="322" viewBox="0 0 960 322" role="img" aria-labelledby="title desc">
   <title id="title">Comet Atlas</title>
-  <desc id="desc">Public GitHub calendar from 09 Nov 2025 to 12 Nov 2026. Each day is a tile. Brighter tiles and larger centers represent more contributions.</desc>
+  <desc id="desc">Public GitHub calendar from 09 Nov 2025 to 13 Nov 2026. Each day is a tile. Brighter tiles and larger centers represent more contributions.</desc>
   <defs>
     <linearGradient id="sky" x2="1" y2="1">
       <stop stop-color="#0B1020"/><stop offset="1" stop-color="#111B30"/>
@@ -466,6 +466,7 @@
   <g><title>10 Nov 2026 · 0 contributions</title><rect x="919.00" y="112" width="12" height="12" rx="2" fill="#1D293C"/></g>
   <g><title>11 Nov 2026 · 1 contribution</title><rect x="919.00" y="127" width="12" height="12" rx="2" fill="#1A593D"/><circle cx="925.00" cy="133" r="0.91" fill="#D3FAE0" opacity=".68"/></g>
   <g><title>12 Nov 2026 · 0 contributions</title><rect x="919.00" y="142" width="12" height="12" rx="2" fill="#1D293C"/></g>
+  <g><title>13 Nov 2026 · 0 contributions</title><rect x="919.00" y="157" width="12" height="12" rx="2" fill="#1D293C"/></g>
   <rect class="motion" x="249.00" y="172.00" width="12" height="12" rx="2" fill="#C1F2FF" opacity="0">
     <animate attributeName="opacity" values="0;0;0.174;0;0" keyTimes="0;0.3149;0.3399;0.3849;1" dur="20s" repeatCount="indefinite"/>
   </rect>
@@ -548,7 +549,7 @@
     <circle r="2.9" fill="#F4FDFF"/>
   </g>
   <g font-family="Consolas, 'Liberation Mono', monospace" font-size="12" fill="#C7D5E9">
-    <text x="25" y="307">09 Nov 2025 – 12 Nov 2026</text>
+    <text x="25" y="307">09 Nov 2025 – 13 Nov 2026</text>
     <text x="836" y="307" text-anchor="end">Less</text>
     <text x="935" y="307" text-anchor="end">More</text>
   </g>
