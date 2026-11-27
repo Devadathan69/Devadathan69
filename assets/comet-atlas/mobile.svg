@@ -489,7 +489,7 @@
   <g><title>24 Nov 2026 · 0 contributions</title><rect x="423.96" y="239" width="12" height="12" rx="2" fill="#1D293C"/></g>
   <g><title>25 Nov 2026 · 0 contributions</title><rect x="423.96" y="254" width="12" height="12" rx="2" fill="#1D293C"/></g>
   <g><title>26 Nov 2026 · 0 contributions</title><rect x="423.96" y="269" width="12" height="12" rx="2" fill="#1D293C"/></g>
-  <g><title>27 Nov 2026 · 0 contributions</title><rect x="423.96" y="284" width="12" height="12" rx="2" fill="#1D293C"/></g>
+  <g><title>27 Nov 2026 · 1 contribution</title><rect x="423.96" y="284" width="12" height="12" rx="2" fill="#1A593D"/><circle cx="429.96" cy="290" r="0.91" fill="#D3FAE0" opacity=".68"/></g>
   <rect class="motion" x="108.15" y="299.00" width="12" height="12" rx="2" fill="#C1F2FF" opacity="0">
     <animate attributeName="opacity" values="0;0;0.137;0;0" keyTimes="0;0.3095;0.3345;0.3795;1" dur="20s" repeatCount="indefinite"/>
   </rect>
